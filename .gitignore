@@ -1,0 +1,11 @@
+work/
+error.log
+build/
+parts/
+vendor/
+source-local/
+__pycache__/
+*.pyc
+dist/
+.venv/
+release-notes/
