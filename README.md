@@ -2,7 +2,7 @@
 
 # 풀잎솜 (Pullipsom)
 
-IBM Plex Sans KR에 한글과 한자, 가나를 합쳐서 만든 CJK 가변폭 글꼴입니다.
+IBM Plex Sans KR에 한자와 가나를 더해 만든 CJK 가변폭 글꼴입니다.
 
 | | |
 |---|---|
@@ -22,7 +22,7 @@ IBM Plex Sans    →  Plex Sans KR     →  Plex Sans JP  →  Plex Sans TC  →
 
 # 레시피
 
-IBM Plex Sans KR은 전통적인 CJK 메트릭을 버리고, IBM Plex Sans의 로마자에 한글을 배치를 맞춘 글꼴입니다.
+IBM Plex Sans KR은 전통적인 CJK 메트릭을 버리고, IBM Plex Sans의 로마자에 한글 배치를 맞춘 글꼴입니다.
 다만 CJK 메트릭을 버리지 못한 한자와 가나는 IBM Plex Sans KR에 포함되지 못하였습니다.
 여기에서는 CJK 메트릭을 사용한 한자와 가나가, IBM Plex Sans KR의 한글에 어울리도록, 크기와 베이스를 조절한 뒤
 하나의 그릇으로 모읍니다. 어떻게 해서 만들었는지 [RECIPE.md](RECIPE.md)를 읽어보세요.
