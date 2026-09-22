@@ -1,31 +1,30 @@
 ![Pullipsom](images/pullipsom.png)
 
-# Pullipsom (풀잎솜)
+# 풀잎솜 (Pullipsom)
 
-IBM Plex Sans에 한글과 한자, 가나를 합쳐서 만든 가변폭 글꼴입니다.
+IBM Plex Sans에 한글과 한자, 가나를 합쳐서 만든 CJK 가변폭 글꼴입니다.
 
 | | |
 |---|---|
 | **담은 글자** | 라틴·그리스·키릴, 한글 11,172자, 한자 30,000여 자, 가나 |
 | **굵기** | Thin부터 Bold까지 여덟 굵기, 각각 이탤릭 |
-| **폭** | 가변폭. 한글 892, 한자·가나 960, 전각 기호 1000, 라틴은 글자마다 다름 |
 
-고정폭이 필요하면 [Monoplex](https://github.com/y-kim/monoplex)를 쓰세요. 같은
-집안의 소스 글꼴을 쓰지만 그쪽은 터미널과 편집기를 위한 프로그래밍 글꼴입니다.
+고정폭이 필요하면 [Monoplex](https://github.com/y-kim/monoplex)를 쓰세요. IBM
+Plex Mono에서 태어난 터미널과 편집기를 위한 프로그래밍 글꼴입니다.
 
 # 소스 글꼴
 
 같은 코드포인트를 여러 글꼴이 갖고 있을 때는 아래 순서로 먼저 있는 것을 씁니다.
 
 ```
-IBM Plex Sans  →  Plex Sans KR  →  Plex Sans JP  →  Plex Sans TC  →  Plex Sans SC
-라틴·그리스·키릴    한글·한국어 기호    가나·한자          한자 보충        간체·확장A
+IBM Plex Sans    →  Plex Sans KR     →  Plex Sans JP  →  Plex Sans TC  →  Plex Sans SC
+라틴·그리스·키릴    한글·한국어 기호    가나·한자        한자 보충        간체·확장A
 ```
 
-IBM Plex Sans KR의 라틴은 IBM Plex Sans의 라틴과 같은 자형입니다. 두 글꼴이
-함께 가진 191자 중 188자가 폭과 자면 상자까지 일치합니다. 그래서 라틴을 Plex
-Sans에서 받아도 한글 쪽에서 잃는 것이 없고, Sans KR에 없는 그리스와 키릴,
-라틴 확장, 그리고 진짜 이탤릭을 얻습니다.
+IBM Plex Sans KR은 전통적인 CJK 메트릭을 버리고 IBM Plex Sans의 로마자에 한글
+배치를 맞춘 글꼴입니다. 다만 그리스와 키릴, 라틴 확장이 하나도 없고 이탤릭도
+없습니다. 그래서 로마자는 Plex Sans에서 직접 받습니다. 두 글꼴의 로마자가 같은
+자형이라 한글 쪽에서 잃는 것은 없습니다.
 
 한자와 가나는 자면을 한글에 맞춰 줄이고 내렸습니다. 기호는 폭이 갈리던 것을
 한쪽으로 모으고 수학 축에 세웠습니다. 소스의 커닝도 살렸습니다. 무엇을 왜
