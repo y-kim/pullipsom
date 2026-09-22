@@ -2,15 +2,14 @@
 
 # 풀잎솜 (Pullipsom)
 
-IBM Plex Sans에 한글과 한자, 가나를 합쳐서 만든 CJK 가변폭 글꼴입니다.
+IBM Plex Sans KR에 한글과 한자, 가나를 합쳐서 만든 CJK 가변폭 글꼴입니다.
 
 | | |
 |---|---|
 | **담은 글자** | 라틴·그리스·키릴, 한글 11,172자, 한자 30,000여 자, 가나 |
 | **굵기** | Thin부터 Bold까지 여덟 굵기, 각각 이탤릭 |
 
-고정폭이 필요하면 [Monoplex](https://github.com/y-kim/monoplex)를 쓰세요. IBM
-Plex Mono에서 태어난 터미널과 편집기를 위한 프로그래밍 글꼴입니다.
+고정폭이 필요하면 [Monoplex](https://github.com/y-kim/monoplex)를 쓰세요. IBM Plex Mono에서 태어난 터미널과 편집기를 위한 프로그래밍 글꼴입니다.
 
 # 소스 글꼴
 
@@ -21,14 +20,12 @@ IBM Plex Sans    →  Plex Sans KR     →  Plex Sans JP  →  Plex Sans TC  →
 라틴·그리스·키릴    한글·한국어 기호    가나·한자        한자 보충        간체·확장A
 ```
 
-IBM Plex Sans KR은 전통적인 CJK 메트릭을 버리고 IBM Plex Sans의 로마자에 한글
-배치를 맞춘 글꼴입니다. 다만 그리스와 키릴, 라틴 확장이 하나도 없고 이탤릭도
-없습니다. 그래서 로마자는 Plex Sans에서 직접 받습니다. 두 글꼴의 로마자가 같은
-자형이라 한글 쪽에서 잃는 것은 없습니다.
+# 레시피
 
-한자와 가나는 자면을 한글에 맞춰 줄이고 내렸습니다. 기호는 폭이 갈리던 것을
-한쪽으로 모으고 수학 축에 세웠습니다. 소스의 커닝도 살렸습니다. 무엇을 왜
-그렇게 했는지는 [RECIPE.md](RECIPE.md)에 있습니다.
+IBM Plex Sans KR은 전통적인 CJK 메트릭을 버리고, IBM Plex Sans의 로마자에 한글을 배치를 맞춘 글꼴입니다.
+다만 CJK 메트릭을 버리지 못한 한자와 가나는 IBM Plex Sans KR에 포함되지 못하였습니다.
+여기에서는 CJK 메트릭을 사용한 한자와 가나가, IBM Plex Sans KR의 한글에 어울리도록, 크기와 베이스를 조절한 뒤
+하나의 그릇으로 모읍니다. 어떻게 해서 만들었는지 [RECIPE.md](RECIPE.md)를 읽어보세요.
 
 # 갤러리
 
