@@ -23,6 +23,7 @@ PYTHONPATH=tools/src python3 -m hapchija fetch --recipe recipes/pullipsom.json
 |---|---|---|
 | `recipes/` | 레시피 | 추적 |
 | `scripts/` | README 견본 그림을 만드는 스크립트 | 추적 |
+| `tests/` | 테스트와 기준 글리프(golden reference) | 추적 |
 | `vendor/` | 받아온 소스 글꼴 | 무시 |
 | `work/` | 빌드 중간 산출물. 끝나면 지워집니다 | 무시 |
 | `build/` | 생성된 TTF | 무시 |
@@ -112,3 +113,17 @@ python3 scripts/specimen.py build/Pullipsom images
 굵기를 섞어 그리는 이름 그림에서만 글자 단위로 끊고, 그때는 `hmtx` 의 폭을
 직접 읽습니다. 그림에 없는 글자가 있으면 스크립트가 멈추고 무엇이 없는지
 알려 줍니다.
+
+## 테스트
+
+변·방 가르기(`hapchija.outline.split_glyph`)를 사람이 그림으로 보고 통과시킨
+자리의 결과를 기준 글리프로 `tests/golden/split/` 에 둡니다. 함수를 고친 뒤 같은
+글리프가 나오지 않으면 버그입니다. 소스 글꼴이 받아져 있어야 하고, FontForge
+파이썬 모듈이 필요합니다.
+
+```bash
+PYTHONPATH=tools/src python -m unittest discover -s tests -v
+```
+
+기준 글리프는 통과시킨 뒤에만 등록합니다:
+`python tests/split_golden.py register <글자> <굵기> <안내 굵기>`.
