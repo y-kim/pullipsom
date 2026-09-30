@@ -36,6 +36,19 @@ IBM Plex Sans    →  Plex Sans KR     →  Plex Sans JP  →  Plex Sans TC  →
 간체는 글리프 수 상한 때문에 GB 2312(6,763자) 안의 글자만 바꿉니다. 홍콩과
 마카오는 IBM Plex 에 그 자형이 없어 대만 자형으로 대신합니다.
 
+같은 한자를 언어마다 한 줄씩 적은 것입니다. 회색은 한국 자형과 같은 글자입니다.
+
+![나라별 한자 자형](images/locl.png)
+
+웹 페이지라면 `lang` 으로 언어를 알려 줍니다.
+
+```html
+<p lang="ko">社者丈骨直</p>      <!-- 한국 자형 -->
+<p lang="ja">社者丈骨直</p>      <!-- 일본 자형 -->
+<p lang="zh-Hant">社者丈骨直</p> <!-- 번체 자형 -->
+<p lang="zh-Hans">社者丈骨直</p> <!-- 간체 자형 -->
+```
+
 # 레시피
 
 IBM Plex Sans KR은 전통적인 CJK 메트릭을 버리고, IBM Plex Sans의 로마자에 한글 배치를 맞춘 글꼴입니다.

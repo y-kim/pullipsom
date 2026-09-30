@@ -106,7 +106,7 @@ python3 scripts/specimen.py build/Pullipsom images
 
 | 스크립트 | 만드는 것 |
 |---|---|
-| `scripts/specimen.py` | 이름 그림, 본문 견본, 굵기 견본, 글자 갈래 견본 |
+| `scripts/specimen.py` | 이름 그림, 본문 견본, 굵기 견본, 글자 갈래 견본, 나라별 한자 자형 |
 | `scripts/render.py` | 글꼴을 열고 글줄을 그리는 공통 부분 |
 
 가변폭 글꼴이라 글줄을 통째로 넘겨서 커닝이 들어간 실제 폭으로 그립니다.

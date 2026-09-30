@@ -2,12 +2,13 @@
 
     python3 scripts/specimen.py build/Pullipsom images
 
-네 장을 만든다.
+다섯 장을 만든다.
 
     pullipsom.png  맨 위의 이름 그림. 굵기가 가로 위치를 따라 변한다
     mixed.png     한글·한자·가나·라틴을 섞은 본문
     weights.png   여덟 굵기와 이탤릭
     coverage.png  글자 갈래별 견본
+    locl.png      같은 한자가 언어마다 어떻게 보이는지 (locl)
 """
 
 from __future__ import annotations
@@ -115,6 +116,45 @@ def coverage(fam, out):
     print(out)
 
 
+LOCL_CHARS = "社者丈骨直角令海船器房曜"
+LOCL_ROWS = [("한국어", "ko"), ("일본어", "ja"), ("중국어 번체", "zh-Hant"), ("중국어 간체", "zh-Hans")]
+
+
+def locl(fam, out):
+    """같은 한자를 언어마다 한 줄씩. 한국 자형과 같은 칸은 회색으로 둔다.
+
+    Raqm 이 language 를 HarfBuzz 로 넘겨 locl 이 걸린다. 같은지는 한 글자씩
+    따로 그려 본 비트맵으로 가린다.
+    """
+    from PIL import Image, ImageChops, ImageDraw
+
+    size, cell, pad, lab = 100, 138, 50, 250
+    face = fam.face("Regular", size)
+    gone = fam.missing(LOCL_CHARS)
+    if gone:
+        raise SystemExit("ERROR: 글꼴에 없는 글자: " + " ".join(gone))
+
+    def mask(ch, lang):
+        m = Image.new("L", (size * 2, size * 2), 0)
+        ImageDraw.Draw(m).text((size // 2, size * 3 // 2), ch, font=face, fill=255,
+                               anchor="ls", language=lang)
+        return m
+
+    img, d = canvas((lab + pad + len(LOCL_CHARS) * cell, pad + len(LOCL_ROWS) * 150), PAPER)
+    y = pad + 110
+    for r, (label, lang) in enumerate(LOCL_ROWS):
+        d.text((pad, y - 30), label, font=fam.face("Regular", 26), fill=GREY, anchor="ls")
+        for i, ch in enumerate(LOCL_CHARS):
+            same = r > 0 and ImageChops.difference(mask(ch, lang), mask(ch, "ko")).getbbox() is None
+            d.text((lab + pad + i * cell, y), ch, font=face, fill=(200, 200, 200) if same else INK,
+                   anchor="ls", language=lang)
+        if r < len(LOCL_ROWS) - 1:
+            d.line([(pad, y + 38), (img.width - pad, y + 38)], fill=(232, 232, 232), width=2)
+        y += 150
+    crop(img, 34).save(out)
+    print(out)
+
+
 def main(argv):
     directory = argv[1] if len(argv) > 1 else "build/Pullipsom"
     out_dir = argv[2] if len(argv) > 2 else "images"
@@ -124,6 +164,7 @@ def main(argv):
     mixed(fam, os.path.join(out_dir, "mixed.png"))
     weights(fam, os.path.join(out_dir, "weights.png"))
     coverage(fam, os.path.join(out_dir, "coverage.png"))
+    locl(fam, os.path.join(out_dir, "locl.png"))
 
 
 if __name__ == "__main__":
