@@ -543,6 +543,124 @@
           "$note": "益 — 溢 의 오른쪽 몸을 가져와 제 먹 상자에 맞춰 벌림"
         },
         {
+          "op": "evenOverhang",
+          "$note": "益 — 皿 밑 가로선의 왼쪽 나옴을 오른쪽 나옴과 같게",
+          "cps": [
+            "76ca"
+          ]
+        },
+        {
+          "op": "mirrorStroke",
+          "$note": "丈 — 乀 꼭짓점에서 왼쪽 아래로 갈라지는 삐침. 제 乀 을 잘라 거울로 뒤집어 붙인다 (자리·비율은 맑은 고딕에서 잼)",
+          "tip": [
+            0.134,
+            0.433
+          ],
+          "longer": 0.34,
+          "rise": 1.0,
+          "side": 2.0,
+          "cps": [
+            "4e08"
+          ]
+        },
+        {
+          "op": "addDot",
+          "$note": "者 계열 — 耂 아래 점. 黨·點 의 灬 점을 50° 로 눕혀 놓는다. rx 는 Source Han Sans K 에서 잰 丿 자리 (2026-09-28 리뷰 확정 · graft/dot2)",
+          "donors": "黨點",
+          "angle": 50,
+          "thick": 0.78,
+          "length": {
+            "Thin": 0.6,
+            "ExtraLight": 0.6,
+            "Light": 0.61,
+            "Regular": 0.63,
+            "Text": 0.66,
+            "Medium": 0.69,
+            "SemiBold": 0.74,
+            "Bold": 0.79
+          },
+          "topShare": 0.7,
+          "minTop": 0.12,
+          "clear": 3,
+          "at": {
+            "者": {
+              "win": [
+                0,
+                1
+              ],
+              "rx": 0.195
+            },
+            "暑": {
+              "win": [
+                0,
+                1
+              ],
+              "rx": 0.189
+            },
+            "署": {
+              "win": [
+                0,
+                1
+              ],
+              "rx": 0.212
+            },
+            "諸": {
+              "win": [
+                0.4,
+                1
+              ],
+              "rx": 0.143
+            },
+            "渚": {
+              "win": [
+                0.28,
+                1
+              ],
+              "rx": 0.159
+            },
+            "猪": {
+              "win": [
+                0.32,
+                1
+              ],
+              "rx": 0.147,
+              "dy": -0.04
+            },
+            "煮": {
+              "win": [
+                0,
+                1
+              ],
+              "rx": 0.192
+            },
+            "著": {
+              "win": [
+                0,
+                1
+              ],
+              "rx": 0.186
+            },
+            "都": {
+              "win": [
+                0,
+                0.7
+              ],
+              "rx": 0.113
+            }
+          },
+          "cps": [
+            "8005",
+            "6691",
+            "7f72",
+            "8af8",
+            "6e1a",
+            "732a",
+            "716e",
+            "8457",
+            "90fd"
+          ]
+        },
+        {
           "op": "swapSide",
           "from": "589e",
           "side": "right",
@@ -631,10 +749,21 @@
           ],
           "side": "right",
           "fit": "box",
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
+          "splitBoxes": {
+            "55a9": [
+              [
+                0,
+                -0.15,
+                0.33,
+                0.9
+              ]
+            ]
+          },
           "cps": [
             "8f38"
           ],
-          "$note": "輸 — 喩 의 兪 (Bold 는 기증자 없음)"
+          "$note": "輸 — 喩 의 兪 (Bold 는 喩 의 口 가 녹아붙어 가는 굵기를 안내로 가른다)"
         },
         {
           "op": "copyGlyph",
@@ -648,7 +777,7 @@
           "op": "swapStrokeEnds",
           "at": [
             0.36,
-            -0.05,
+            -0.08,
             0.96,
             0.47
           ],
@@ -661,6 +790,14 @@
             1
           ],
           "share": 0.35,
+          "cps": [
+            "7a0b"
+          ]
+        },
+        {
+          "op": "evenBarTrimLeg",
+          "$note": "程 — 壬 가운데 가로획 왼팔을 오른팔 길이로. 禾 오른쪽 다리는 다리 길이의 17.9% 줄이고(Thin −36), 그래도 닿으면 겹쳐 합친다",
+          "ratio": 0.179,
           "cps": [
             "7a0b"
           ]
@@ -691,31 +828,13 @@
           "$note": "極 — SC 의 又 를 목에서 갈라 옮기고 윗바를 몸통에 밀어넣음"
         },
         {
-          "op": "graftPart",
+          "op": "rebuildPart",
+          "$note": "慨 — 이체자 jp83 의 旣 에서 변(皀)을 지우고 漑 의 한국 자형 皀 를 넣는다. 왼쪽 세로선을 맞춰 옮기고, 칼선이 지나는 가로획만 줄여 오른쪽 세로선도 맞춘다 (늘이지 않음, 맨 위 삐침 그대로)",
+          "base": "uni6168.jp83",
           "from": "6f11",
-          "fit": "gap",
-          "gap": 0.016,
-          "gapFrom": "left",
-          "boxes": [
-            [
-              0.24,
-              -0.1,
-              1.0,
-              0.9
-            ]
-          ],
-          "donorBoxes": [
-            [
-              0.28,
-              -0.1,
-              0.97,
-              0.9
-            ]
-          ],
-          "cps": [
-            "6168"
-          ],
-          "$note": "慨 — 漑 의 旣 를 변에서 1.6% 띄워 맞춤"
+          "part": {"minHeight": 0.7, "left": [0.2, 0.45], "maxWidth": 0.45},
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
+          "cps": ["6168"]
         },
         {
           "op": "stretchStroke",
@@ -763,8 +882,8 @@
         {
           "op": "graftPart",
           "from": "79ae",
-          "fit": "gap",
-          "gap": 0.012,
+          "fit": "left",
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "boxes": [
             [
               0,
@@ -780,9 +899,11 @@
         },
         {
           "op": "graftPart",
-          "from": "7942",
-          "fit": "gap",
-          "gap": 0.003,
+          "$note": "祈 — 祂 보다 살짝 넓은 示 (祏), 오른쪽 점은 제 길이 그대로 두고 斤 과 만나면 합친다",
+          "from": "794f",
+          "fit": "left",
+          "merge": true,
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "boxes": [
             [
               0,
@@ -797,9 +918,12 @@
         },
         {
           "op": "graftPart",
-          "from": "7946",
-          "fit": "gap",
-          "gap": 0.012,
+          "$note": "祖 — 示 의 가운데 세로획이 원래 礻 세로획 자리와 맞는 祓, 오른쪽 점은 祆 의 길이로 줄인다 (굵을수록 且 에 닿지 않게)",
+          "from": "7953",
+          "fit": "left",
+          "rightDotLike": "7946",
+          "rightDotGrow": false,
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "boxes": [
             [
               0,
@@ -814,9 +938,10 @@
         },
         {
           "op": "graftPart",
-          "from": "79b0",
-          "fit": "gap",
-          "gap": 0.003,
+          "$note": "祝 — 兄 의 儿 가 변 밑으로 들어오니 오른쪽 점이 짧은 示, 너비는 지금(禰)과 방 윗부분에 맞춘 넓이의 중간 — 祑 을 늘이지 않고 왼끝만 맞춰",
+          "from": "7951",
+          "fit": "left",
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "boxes": [
             [
               0,
@@ -831,9 +956,10 @@
         },
         {
           "op": "graftPart",
-          "from": "7940",
-          "fit": "gap",
-          "gap": 0.012,
+          "$note": "神 — 申 에 파고들지 않게 좁은 示 (祜, 간격 +70 → +34)",
+          "from": "795c",
+          "fit": "left",
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "boxes": [
             [
               0,
@@ -849,8 +975,8 @@
         {
           "op": "graftPart",
           "from": "7993",
-          "fit": "gap",
-          "gap": 0.012,
+          "fit": "left",
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "boxes": [
             [
               0,
@@ -866,8 +992,8 @@
         {
           "op": "graftPart",
           "from": "79a8",
-          "fit": "gap",
-          "gap": 0.012,
+          "fit": "left",
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "boxes": [
             [
               0,
@@ -882,9 +1008,10 @@
         },
         {
           "op": "graftPart",
-          "from": "798a",
-          "fit": "gap",
-          "gap": -0.012,
+          "$note": "視 — 祝 과 같은 변 (祑). 見 의 儿 가 변 밑으로 들어오니 오른쪽 점이 짧은 示",
+          "from": "7951",
+          "fit": "left",
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "boxes": [
             [
               0,
@@ -899,27 +1026,29 @@
         },
         {
           "op": "graftPart",
-          "from": "79b0",
-          "fit": "gap",
-          "gap": 0.012,
-          "boxes": [
-            [
-              0,
-              -0.15,
-              0.48,
-              0.9
-            ]
-          ],
-          "cps": [
-            "7949",
-            "798e"
-          ]
+          "$note": "祉 — 禰 와 祓 의 중간 너비인 祋. 오른쪽 다리는 Thin 은 제 길이, Bold 는 393, 그 사이는 굵기 따라 고르게",
+          "from": "794b",
+          "fit": "left",
+          "rightDotRamp": 393,
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
+          "boxes": [[0, -0.15, 0.48, 0.9]],
+          "cps": ["7949"]
+        },
+        {
+          "op": "graftPart",
+          "$note": "禎 — 禰 보다 넓은 祋, 오른쪽 점은 貞 에 겹치지 않을 만큼만 줄인다",
+          "from": "794b",
+          "fit": "left",
+          "rightDotClear": 0,
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
+          "boxes": [[0, -0.15, 0.48, 0.9]],
+          "cps": ["798e"]
         },
         {
           "op": "graftPart",
           "from": "79b1",
-          "fit": "gap",
-          "gap": 0.012,
+          "fit": "left",
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "boxes": [
             [
               0,
@@ -935,8 +1064,8 @@
         {
           "op": "graftPart",
           "from": "797e",
-          "fit": "gap",
-          "gap": 0.012,
+          "fit": "left",
+          "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "boxes": [
             [
               0,
