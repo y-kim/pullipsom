@@ -33,7 +33,8 @@
 
 그 뒤 op 을 한 번 정리했습니다. 쓰지 않는 op (`apexFlag` `openBridge` `swapRadical`)과
 옵션은 지우고, 같은 일을 하는 op 은 하나로 합쳤습니다. 예전 이름은 옵션 하나로
-바뀝니다. 글꼴은 정리 전과 점 하나까지 같습니다.
+바뀝니다. 글꼴은 정리 전과 점 하나까지 같습니다. swapRadical 만 쓰던 연장
+(`beside_form` `across_form` 과 그 도우미, `minus_form` `carve_form`)도 함께 지웠습니다.
 
 | 예전 | 지금 |
 |---|---|
