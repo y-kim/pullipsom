@@ -563,7 +563,8 @@
           "$note": "益 — 溢 의 오른쪽 몸을 가져와 제 먹 상자에 맞춰 벌림"
         },
         {
-          "op": "evenOverhang",
+          "op": "evenBar",
+          "bottom": true,
           "$note": "益 — 皿 밑 가로선의 왼쪽 나옴을 오른쪽 나옴과 같게",
           "cps": [
             "76ca"
@@ -848,7 +849,8 @@
           "$note": "極 — SC 의 又 를 목에서 갈라 옮기고 윗바를 몸통에 밀어넣음"
         },
         {
-          "op": "rebuildPart",
+          "op": "swapSide",
+          "rebuild": true,
           "$note": "慨 — 이체자 jp83 의 旣 에서 변(皀)을 지우고 漑 의 한국 자형 皀 를 넣는다. 왼쪽 세로선을 맞춰 옮기고, 칼선이 지나는 가로획만 줄여 오른쪽 세로선도 맞춘다 (늘이지 않음, 맨 위 삐침 그대로)",
           "base": "uni6168.jp83",
           "from": "6f11",
@@ -1190,14 +1192,16 @@
           "$note": "瀛 — 亡 의 세로획을 아래 口 의 왼쪽 세로선에 맞춰 안으로 넣어 윗가로획 끝이 나오게 (KS X 1001)"
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "at": [0.7, 0.2, 0.82, 0.34],
           "to": [0.7, 0.42, 0.82, 0.55],
           "cps": ["8e60"],
           "$note": "蹠 — 廿 의 아래 가로획을 첫 가로획 오른끝까지 (KS X 1001)"
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "side": "left",
           "toInk": true,
           "at": [0.6, 0.2, 0.7, 0.34],
@@ -1205,7 +1209,8 @@
           "$note": "蹠 — 아래 가로획 왼끝을 广 의 삐침에 붙인다"
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "at": [0.7, 0.42, 0.82, 0.55],
           "by": -0.029,
           "cps": ["8e60"],
@@ -1226,7 +1231,8 @@
           "$note": "轄 — 害 의 가운데 가로획을 첫 가로획의 33/36 로, 양 끝을 같은 만큼 당겨 (KS X 1001: 아래 > 위 > 가운데)"
         },
         {
-          "op": "detachStem",
+          "op": "detachBar",
+          "axis": "v",
           "at": [0.45, 0.6, 0.95, 0.66],
           "gap": 21,
           "cps": ["9a6a"],
@@ -1248,7 +1254,8 @@
           "$note": "酵 — 같은 一 을 왼쪽 세로획에서도 떼어 酉 안에 띄운다"
         },
         {
-          "op": "detachStem",
+          "op": "detachBar",
+          "axis": "v",
           "end": "bottom",
           "at": [0.55, 0.25, 0.67, 0.35],
           "gap": 27,
@@ -1287,7 +1294,8 @@
           "$note": "躬 弓 네 번째 꺾임 아래로 삐침 — 가로획 아랫변에서 42, 위 곡선과 같은 휨"
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "side": "left",
           "at": [0.4, 0.74, 0.6, 0.755],
           "to": [0.4, 0.625, 0.6, 0.645],
@@ -1418,7 +1426,8 @@
           "$note": "騁 亏·丂 꺾이는 모서리 아래로 삐침 — 가로획 아랫변에서 42, 폭 일정 (KS)"
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "side": "left",
           "toInk": true,
           "at": [0.45, 0.67, 0.55, 0.68],
@@ -1426,14 +1435,16 @@
           "$note": "冕 冃 첫 안 가로선 왼끝을 벽까지 — 日 처럼"
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "toInk": true,
           "at": [0.45, 0.67, 0.55, 0.68],
           "cps": ["5195"],
           "$note": "冕 冃 첫 안 가로선 오른끝을 벽까지 — 日 처럼"
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "side": "left",
           "toInk": true,
           "at": [0.45, 0.56, 0.55, 0.57],
@@ -1441,7 +1452,8 @@
           "$note": "冕 冃 둘째 안 가로선 왼끝을 벽까지 — 日 처럼"
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "toInk": true,
           "at": [0.45, 0.56, 0.55, 0.57],
           "cps": ["5195"],
@@ -1484,14 +1496,16 @@
           "cps": ["5448"]
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "side": "left",
           "at": [0.2, 0.17, 0.8, 0.2],
           "to": [0.2, -0.03, 0.8, -0.01],
           "cps": ["5448"]
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "at": [0.2, 0.17, 0.8, 0.2],
           "to": [0.2, -0.03, 0.8, -0.01],
           "cps": ["5448"]
@@ -1505,14 +1519,16 @@
           "likeInk": true
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "side": "left",
           "at": [0.45, 0.135, 0.85, 0.15],
           "to": [0.45, -0.035, 0.85, -0.02],
           "cps": ["6a89"]
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "at": [0.45, 0.135, 0.85, 0.15],
           "to": [0.45, -0.035, 0.85, -0.02],
           "cps": ["6a89"]
@@ -1550,13 +1566,15 @@
           "cps": ["585a"]
         },
         {
-          "op": "straightenSlant",
+          "op": "straightenStroke",
+          "slant": true,
           "at": [0.603, 0.3, 0.73, 0.6],
           "upright": true,
           "cps": ["5ed0"]
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "at": [0.62, 0.347, 0.65, 0.36],
           "side": "left",
           "toInk": true,
@@ -1565,7 +1583,8 @@
           "cps": ["5ed0"]
         },
         {
-          "op": "extendBar",
+          "op": "stretchStroke",
+          "axis": "h",
           "at": [0.62, 0.617, 0.65, 0.63],
           "side": "left",
           "to": [0.62, 0.347, 0.65, 0.36],
@@ -1626,7 +1645,8 @@
           "cps": ["59ec"]
         },
         {
-          "op": "dotsToStems",
+          "op": "dotToBar",
+          "stems": true,
           "at": [0, 0.3, 1, 0.352],
           "single": true,
           "centerBar": true,
@@ -1638,7 +1658,8 @@
           "cps": ["51de"]
         },
         {
-          "op": "openFoot",
+          "op": "detachBar",
+          "foot": true,
           "at": [0.6, 0.45, 0.95, 0.8],
           "like": "7664",
           "likeAt": [0.64, -0.08, 0.95, 0.45],
@@ -1646,7 +1667,8 @@
           "barAt": [0.645, 0.505, 0.85, 0.515]
         },
         {
-          "op": "openFoot",
+          "op": "detachBar",
+          "foot": true,
           "at": [0.66, 0.45, 0.93, 0.66],
           "like": "7664",
           "likeAt": [0.64, -0.08, 0.95, 0.45],
@@ -1670,7 +1692,8 @@
           "cps": ["7652"]
         },
         {
-          "op": "dropPart",
+          "op": "swapCounters",
+          "dots": "drop",
           "at": [[0.37, 0.19, 0.56, 0.41]],
           "split": "IBM-Plex-Sans-JP/IBMPlexSansJP-{cjkSrc}.ttf",
           "guideAs": "uni7652.jp78",
@@ -1691,7 +1714,8 @@
           "knifeShare": 0.5
         },
         {
-          "op": "placeDots",
+          "op": "swapCounters",
+          "dots": "place",
           "at": [0.3, 0.14, 0.6, 0.48],
           "like": "uni7652.jp78",
           "likeAt": [0.3, 0.14, 0.66, 0.48],
@@ -3021,7 +3045,8 @@
           "$note": "卨 — 위 口 안 작은 네모를 오른쪽으로, 그 왼변을 卜 세로획에 맞춘다 (KS X 1001)"
         },
         {
-          "op": "roofBar",
+          "op": "dotToBar",
+          "roof": true,
           "from": "IBM-Plex-Sans-TC/IBMPlexSansTC-{cjkSrc}.ttf",
           "fromCp": "98df",
           "fromAt": [0.3, 0.56, 0.7, 0.78],

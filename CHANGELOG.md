@@ -31,6 +31,20 @@
 합치자에는 이 일을 하는 op 이 여럿 더해졌습니다. `copyGlyph` 의 `create` 로 소스에
 없는 글자를 새로 지으면, 그 글자는 소스 배정에서도 그 소스 몫이 됩니다.
 
+그 뒤 op 을 한 번 정리했습니다. 쓰지 않는 op (`apexFlag` `openBridge` `swapRadical`)과
+옵션은 지우고, 같은 일을 하는 op 은 하나로 합쳤습니다. 예전 이름은 옵션 하나로
+바뀝니다. 글꼴은 정리 전과 점 하나까지 같습니다.
+
+| 예전 | 지금 |
+|---|---|
+| `roofBar` · `dotsToStems` | `dotToBar` + `roof` · `stems` |
+| `evenOverhang` | `evenBar` + `bottom` |
+| `straightenSlant` | `straightenStroke` + `slant` |
+| `openFoot` · `detachStem` | `detachBar` + `foot` · `axis: "v"` |
+| `rebuildPart` | `swapSide` + `rebuild` |
+| `dropPart` · `placeDots` | `swapCounters` + `dots: "drop"` · `"place"` |
+| `extendBar` | `stretchStroke` + `axis: "h"` |
+
 ## 0.2.0 — 2026-09-30
 
 ### 나라별 한자 자형 (locl)
