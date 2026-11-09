@@ -3368,7 +3368,13 @@
       "-X",
       "15-"
     ],
-    "$hintingNote": "뼈대인 Sans 에만 들어간다. FontForge 를 거치면서 원래 힌팅은 어차피 버려진다. 한글과 한자는 무힌팅이다.",
+    "hintMerged": true,
+    "unhintedDir": "unhinted",
+    "borrowHints": {
+      "from": "IBM-Plex-Sans-KR/hinted/IBMPlexSansKR-{cjkSrc}.ttf",
+      "within": ["AC00-D7A3"]
+    },
+    "$hintingNote": "부품을 다 합친 뒤 글꼴 전체에 ttfautohint 를 돌린다. FontForge 를 거치면서 소스의 힌팅은 어차피 버려진다. 한글·한자·기호는 ttfautohint 에 스크립트가 없어 대체 스크립트(none)로 획만 픽셀에 맞춘다. 그런데 이것만으로는 12px 의 풀처럼 획이 뭉친다. 그래서 IBM 이 손본 한글 2,780자(KS X 1001 2,350자 + 430자)는 IBM Plex Sans KR hinted 의 힌팅을 그대로 빌려 온다(borrowHints). 무힌팅이던 때보다 파일이 두 배쯤 커진다.",
     "os2": {
       "xAvgCharWidth": 934,
       "isFixedPitch": 0,
@@ -3450,6 +3456,52 @@
         },
         {
           "url": "https://raw.githubusercontent.com/IBM/plex/v6.4.2/IBM-Plex-Sans-KR/fonts/complete/ttf/unhinted/license.txt",
+          "sha256": "91c25c350d3cac39da2736d74f7ba37ef648f5237a4e330a240615bc8d8c4360",
+          "as": "license.txt"
+        }
+      ]
+    },
+    {
+      "name": "IBM Plex Sans KR 1.002 hinted (힌팅만 빌려 온다)",
+      "to": "IBM-Plex-Sans-KR/hinted",
+      "expect": [
+        "IBM-Plex-Sans-KR/hinted/IBMPlexSansKR-Regular.ttf"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/IBM/plex/v6.4.2/IBM-Plex-Sans-KR/fonts/complete/ttf/hinted/IBMPlexSansKR-Thin.ttf",
+          "sha256": "e3d9bb745373c35ea7a9d47793a78da867818418191220fca715686233a710e7"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IBM/plex/v6.4.2/IBM-Plex-Sans-KR/fonts/complete/ttf/hinted/IBMPlexSansKR-ExtraLight.ttf",
+          "sha256": "6418af260af844f30f2a2007bf00b29799c657f29d4e064639a0399302cc0a9f"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IBM/plex/v6.4.2/IBM-Plex-Sans-KR/fonts/complete/ttf/hinted/IBMPlexSansKR-Light.ttf",
+          "sha256": "f8385503257d5b1704c51035ba743cb9bd187e9e825c13e4d940d74b7c45407e"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IBM/plex/v6.4.2/IBM-Plex-Sans-KR/fonts/complete/ttf/hinted/IBMPlexSansKR-Regular.ttf",
+          "sha256": "ff08120e5e9c8815e849d165c085e4c667ff872af7fd376efc6eadfddbf660be"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IBM/plex/v6.4.2/IBM-Plex-Sans-KR/fonts/complete/ttf/hinted/IBMPlexSansKR-Text.ttf",
+          "sha256": "07277ab7b0bc0c7903c1fea55c804d79587f86faee13e5d3035dfef1e116e53e"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IBM/plex/v6.4.2/IBM-Plex-Sans-KR/fonts/complete/ttf/hinted/IBMPlexSansKR-Medium.ttf",
+          "sha256": "2a4a775a70ba45be34726269f165b1d952e7d9496c0759f108c3c88655e00247"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IBM/plex/v6.4.2/IBM-Plex-Sans-KR/fonts/complete/ttf/hinted/IBMPlexSansKR-SemiBold.ttf",
+          "sha256": "54a87205b4d1705df433ab125514e0877121fb61f632f9affee6f15a847a0348"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IBM/plex/v6.4.2/IBM-Plex-Sans-KR/fonts/complete/ttf/hinted/IBMPlexSansKR-Bold.ttf",
+          "sha256": "06f984740eb795961096cd6f6151927fdef414ed1667a98d315881644a36297e"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IBM/plex/v6.4.2/IBM-Plex-Sans-KR/fonts/complete/ttf/hinted/license.txt",
           "sha256": "91c25c350d3cac39da2736d74f7ba37ef648f5237a4e330a240615bc8d8c4360",
           "as": "license.txt"
         }

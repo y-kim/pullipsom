@@ -22,7 +22,7 @@ PYTHONPATH=tools/src python3 -m hapchija fetch --recipe recipes/pullipsom.json
 | | 내용 | git |
 |---|---|---|
 | `recipes/` | 레시피 | 추적 |
-| `scripts/` | README 견본 그림을 만드는 스크립트 | 추적 |
+| `scripts/` | README 견본 그림과 배포 파일을 만드는 스크립트 | 추적 |
 | `tests/` | 테스트와 기준 글리프(golden reference) | 추적 |
 | `vendor/` | 받아온 소스 글꼴 | 무시 |
 | `work/` | 빌드 중간 산출물. 끝나면 지워집니다 | 무시 |
@@ -56,7 +56,15 @@ hapchija build --recipe recipes/pullipsom.json -w text,semibold   # Text, SemiBo
 으로 봅니다.
 
 생성된 TTF 는 `build/Pullipsom/` 아래에 `Pullipsom-{style}.ttf` 로 나옵니다.
-16개 스타일이 나오며, 여덟 두께를 병렬로 만들어 2분 안팎 걸립니다.
+16개 스타일이 나오며, 여덟 두께를 병렬로 만들어 2분 안팎 걸립니다. 힌팅을 뺀 판은
+`build/Pullipsom/unhinted/` 에 같은 이름으로 나옵니다.
+
+배포 파일은 16개 스타일을 모두 빌드한 뒤 만듭니다. hinted 와 unhinted 를 두 폴더로
+나눠 `dist/Pullipsom_v{버전}.zip` 에 담습니다.
+
+```bash
+python3 scripts/package.py
+```
 
 ## Docker 없이 빌드
 

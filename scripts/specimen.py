@@ -8,7 +8,7 @@
     mixed.png     한글·한자·가나·라틴을 섞은 본문
     weights.png   여덟 굵기와 이탤릭
     coverage.png  글자 갈래별 견본
-    locl.png      같은 한자가 언어마다 어떻게 보이는지 (locl)
+    locl.png      같은 말이 언어마다 어떻게 보이는지 (locl)
 """
 
 from __future__ import annotations
@@ -89,9 +89,9 @@ def weights(fam, out):
 
 
 ROWS = [
-    ("한글 11,172자", "다람쥐 헌 쳇바퀴에 타고파 · 웬 쇰말 꽃삽 뷁"),
-    ("한자 28,000여자", "漢字 韓國 東京 龍 鬱 齒 爨 麤 靐"),
-    ("가나", "ひらがな カタカナ ヴォ ﾊﾝｶｸ ぱぴぷぺぽ"),
+    ("한글 11,172자", "다람쥐 헌 쳇바퀴에 타고파· 웬 쇰말 꽃삽"),
+    ("한자 30,000여 자", "漢字 韓國 天地玄黃 龍 鬱 齒 爨 麤 靐"),
+    ("가나", "ひらがな カタカナ ぴょんびょういん ショッピング"),
     ("라틴·그리스·키릴", "Hamburgefonstiv Ταχίστη Съешь ещё"),
     ("국제음성기호", "[pʰullipsom] ɑ ɛ ɪ ɔ ʊ ʃ ʒ θ ð ŋ ɾ"),
     ("숫자와 기호", "0123456789 ½ ⅓ ¾ ₩ € ± × ÷ ≠ ≤ ∞"),
@@ -116,21 +116,23 @@ def coverage(fam, out):
     print(out)
 
 
-LOCL_CHARS = "社者丈骨直角令海船器房曜"
-LOCL_ROWS = [("한국어", "ko"), ("일본어", "ja"), ("중국어 번체", "zh-Hant"), ("중국어 간체", "zh-Hans")]
+LOCL_ROWS = [("한국어", "ko", "圖書館의設計者"),
+             ("일본어", "ja", "図書館の設計者"),
+             ("중국어 번체", "zh-Hant", "圖書館的設計者"),
+             ("중국어 간체", "zh-Hans", "图书馆的设计者")]
 
 
 def locl(fam, out):
-    """같은 한자를 언어마다 한 줄씩. 한국 자형과 같은 칸은 회색으로 둔다.
+    """같은 말을 언어마다 한 줄씩. 한국 자형과 같은 글자는 회색으로 둔다.
 
     Raqm 이 language 를 HarfBuzz 로 넘겨 locl 이 걸린다. 같은지는 한 글자씩
     따로 그려 본 비트맵으로 가린다.
     """
     from PIL import Image, ImageChops, ImageDraw
 
-    size, cell, pad, lab = 100, 138, 50, 250
+    size, pad, lab = 40, 60, 170
     face = fam.face("Regular", size)
-    gone = fam.missing(LOCL_CHARS)
+    gone = fam.missing("".join(t for _, _, t in LOCL_ROWS))
     if gone:
         raise SystemExit("ERROR: 글꼴에 없는 글자: " + " ".join(gone))
 
@@ -140,17 +142,18 @@ def locl(fam, out):
                                anchor="ls", language=lang)
         return m
 
-    img, d = canvas((lab + pad + len(LOCL_CHARS) * cell, pad + len(LOCL_ROWS) * 150), PAPER)
-    y = pad + 110
-    for r, (label, lang) in enumerate(LOCL_ROWS):
-        d.text((pad, y - 30), label, font=fam.face("Regular", 26), fill=GREY, anchor="ls")
-        for i, ch in enumerate(LOCL_CHARS):
+    width = max(face.getlength(t, language=lang) for _, lang, t in LOCL_ROWS)
+    img, d = canvas((int(lab + 2 * pad + width), 40 + len(LOCL_ROWS) * 68), PAPER)
+    y = pad + 20
+    for r, (label, lang, text) in enumerate(LOCL_ROWS):
+        d.text((pad, y), label, font=fam.face("Regular", 19), fill=GREY, anchor="ls")
+        x = lab + pad
+        for ch in text:
             same = r > 0 and ImageChops.difference(mask(ch, lang), mask(ch, "ko")).getbbox() is None
-            d.text((lab + pad + i * cell, y), ch, font=face, fill=(200, 200, 200) if same else INK,
+            d.text((x, y), ch, font=face, fill=(200, 200, 200) if same else INK,
                    anchor="ls", language=lang)
-        if r < len(LOCL_ROWS) - 1:
-            d.line([(pad, y + 38), (img.width - pad, y + 38)], fill=(232, 232, 232), width=2)
-        y += 150
+            x += face.getlength(ch, language=lang)   # 자간은 글자의 제 advance 그대로
+        y += 68
     crop(img, 34).save(out)
     print(out)
 
